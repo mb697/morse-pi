@@ -16,7 +16,7 @@ def timeout():
     global buffer
     if(buffer != ""):
         letter = morse_to_letter(buffer)
-        print (letter,)
+        print letter
         buffer = ""
 
 t = Timer(2.0, timeout)
@@ -77,12 +77,12 @@ while True:
         duration = end - start
 
         if (previous != "null"):
-            if (duration < 0.15):
+            if (duration < 0.25):
                     buffer = ".%s" % (buffer)
             else:
                     buffer = "-%s"% (buffer)
         previous = "open"
-        t = Timer(2.0, timeout)
+        t = Timer(3.0, timeout)
         t.start()
     time.sleep(0.05)
 
