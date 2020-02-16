@@ -10,6 +10,7 @@ previous = "null"
 start = 0
 end = 0
 duration = 0
+t = None
 
 def timeout():
     global buffer
@@ -59,15 +60,13 @@ def morse_to_letter(arg):
     }
     return switcher.get(arg, arg)
 
-t = Timer(2.0, timeout)
-
 while True:
 
     inputValue = GPIO.input(18)
 
     # Morse switch is active
     if (inputValue == False and previous == "open" or inputValue == False and previous == "null"):
-        t.cancel
+        t.cancel()
         start = time.time()
         previous = "closed"
     
@@ -84,7 +83,7 @@ while True:
 
         buffer = buffer + value
         
-        t = Timer(4.0, timeout)
+        t = Timer(2.0, timeout)
         t.start()
     time.sleep(0.05)
 
