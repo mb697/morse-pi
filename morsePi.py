@@ -16,7 +16,7 @@ def timeout():
     global buffer
     if(buffer != ""):
         letter = morse_to_letter(buffer)
-        print(letter)
+        print(letter, end="")
         buffer = ""
 
 t = Timer(2.0, timeout)
