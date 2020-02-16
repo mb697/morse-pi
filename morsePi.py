@@ -84,7 +84,7 @@ while True:
 
         buffer = buffer + value
         
-        t = Timer(3.0, timeout)
+        t = Timer(4.0, timeout)
         t.start()
     time.sleep(0.05)
 
