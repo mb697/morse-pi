@@ -94,7 +94,7 @@ while True:
         
         t = Timer(2.0, timeout)
         t.start()
-        t2 = Timer(2.0, timeout2)
+        t2 = Timer(4.0, timeout2)
         t2.start()
     time.sleep(0.05)
 
