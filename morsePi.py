@@ -5,13 +5,6 @@ from threading import Timer
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.IN,pull_up_down=GPIO.PUD_UP)
 
-buffer = ""
-previous = "null"
-start = 0
-end = 0
-duration = 0
-t = Timer(2.0, timeout)
-
 def timeout():
     global buffer
     if(buffer != ""):
@@ -59,6 +52,13 @@ def morse_to_letter(arg):
         "----.": "9 (----.)",
     }
     return switcher.get(arg, arg)
+
+buffer = ""
+previous = "null"
+start = 0
+end = 0
+duration = 0
+t = Timer(2.0, timeout)
 
 while True:
 
