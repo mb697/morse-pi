@@ -10,7 +10,7 @@ previous = "null"
 start = 0
 end = 0
 duration = 0
-t = None
+t = Timer(2.0, timeout)
 
 def timeout():
     global buffer
