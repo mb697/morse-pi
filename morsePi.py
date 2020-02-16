@@ -69,8 +69,6 @@ while True:
     if (inputValue == False and previous == "open" or inputValue == False and previous == "null"):
         t.cancel
         start = time.time()
-        end = 0
-        duration = 0
         previous = "closed"
     
     # Morse switch is inactive
@@ -79,10 +77,12 @@ while True:
         duration = end - start
         previous = "open"
 
-        if (duration < 0.4):
-                buffer = ".%s" % (buffer)
+        if (duration < 0.2):
+                value = "."
         else:
-                buffer = "-%s"% (buffer)
+                value = "-"
+
+        buffer = buffer + value
         
         t = Timer(3.0, timeout)
         t.start()
